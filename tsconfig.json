@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "jsx": "react-jsx",
+    "strict": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@internal/*": ["./*"],
+      "nodecg/*": ["../../../*"]
+    },
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*", "../../types/browser.d.ts"]
+}

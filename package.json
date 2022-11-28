@@ -1,0 +1,108 @@
+{
+  "name": "nodecg-resir014-stream-overlays",
+  "version": "0.0.0",
+  "description": "Get started creating NodeCG bundles with React + TypeScript + TailwindCSS in seconds.",
+  "private": true,
+  "author": {
+    "name": "Resi Respati",
+    "email": "resir014@gmail.com",
+    "url": "https://resir014.xyz/"
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "starter-kit",
+    "nodecg-bundle"
+  ],
+  "repository": "https://github.com/nodecg/nodecg.git",
+  "license": "Unlicense",
+  "scripts": {
+    "clean": "rimraf dashboard graphics extension.js*",
+    "build": "yarn clean && cross-env NODE_ENV=production webpack",
+    "start": "yarn watch",
+    "watch": "cross-env NODE_ENV=development webpack --watch"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.10.14",
+    "clsx": "^1.2.1",
+    "cross-fetch": "^3.1.5",
+    "date-fns": "^2.29.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.8",
+    "@resir014/tailwind-preset-chungking": "^0.1.4-canary.7",
+    "@tailwindcss/forms": "^0.5.3",
+    "@types/react": "^17.0.49",
+    "@types/react-dom": "^17.0.17",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "autoprefixer": "^10.4.12",
+    "babel-loader": "^8.2.5",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^4.2.2",
+    "eslint": "^8.26.0",
+    "eslint-config-kentcdodds": "^20.4.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "fork-ts-checker-webpack-plugin": "^7.2.13",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "postcss": "^8.4.19",
+    "postcss-loader": "^7.0.1",
+    "postcss-preset-env": "^7.8.2",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "style-loader": "^3.3.1",
+    "stylelint": "^14.14.0",
+    "stylelint-config-recommended": "^9.0.0",
+    "tailwindcss": "^3.2.1",
+    "terser-webpack-plugin": "^5.3.6",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.8.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-merge": "^5.8.0"
+  },
+  "nodecg": {
+    "compatibleRange": "^1.9.0",
+    "dashboardPanels": [
+      {
+        "name": "Stream Dashboard",
+        "title": "Stream Dashboard",
+        "file": "stream-dashboard.html",
+        "headerColor": "#0070f3",
+        "fullbleed": true
+      },
+      {
+        "name": "flightsim-telemetry",
+        "title": "Flightsim Telemetry",
+        "width": 10,
+        "file": "flightsim-telemetry.html",
+        "headerColor": "#00b4ff",
+        "workspace": "Flightsim"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "flightsim.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  }
+}
