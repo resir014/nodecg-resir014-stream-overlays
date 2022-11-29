@@ -1,3 +1,4 @@
+import { useReplicantValue } from '@internal/common/use-replicant';
 import { getDate, getHours, getMinutes, getMonth, getSeconds, getYear } from 'date-fns';
 import { DateMap } from './types';
 
@@ -23,4 +24,14 @@ export function createDateObjectFromMap({
   seconds,
 }: DateMap): Date {
   return new Date(year, monthIndex, day, hours, minutes, seconds);
+}
+
+export function useClock() {
+  const clockState = useReplicantValue<DateMap>('clock-state');
+
+  if (clockState) {
+    return createDateObjectFromMap(clockState);
+  }
+
+  return new Date();
 }
