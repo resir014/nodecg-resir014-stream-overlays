@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply bg-transparent !important;
+  }
+}
+
+@layer components {
+  @supports (-webkit-appearance: none) {
+    .flight-progress[value] {
+      /* Reset the default appearance */
+      -webkit-appearance: none;
+      appearance: none;
+
+      @apply w-full h-[4px];
+
+      ::-webkit-progress-bar {
+        @apply bg-chungking-white;
+      }
+
+      ::-webkit-progress-value {
+        @apply bg-chungking-blue-500;
+      }
+    }
+  }
+}

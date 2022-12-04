@@ -10,7 +10,7 @@ export const InfoCardWrapper = React.forwardRef<HTMLDivElement, InfoCardWrapperP
         {children}
       </div>
     );
-  },
+  }
 );
 
-InfoCardWrapper.displayName = 'InfoCardWrapperWrapper';
+InfoCardWrapper.displayName = 'InfoCardWrapper';

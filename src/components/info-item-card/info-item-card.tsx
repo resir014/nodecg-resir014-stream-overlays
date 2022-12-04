@@ -14,7 +14,7 @@ export const InfoItemCard = React.forwardRef<HTMLElement, InfoItemCardProps>(
         className={clsx(
           'flex flex-row border-l-4 border-chungking-blue-500 bg-chungking-black bg-opacity-70 text-chungking-white text-base leading-none',
           'helper-kern helper-alternate-digits helper-disambiguation',
-          className,
+          className
         )}
         {...rest}
       >
@@ -26,7 +26,7 @@ export const InfoItemCard = React.forwardRef<HTMLElement, InfoItemCardProps>(
         </span>
       </section>
     );
-  },
+  }
 );
 
 InfoItemCard.displayName = 'InfoItemCard';
