@@ -15,16 +15,15 @@ import {
 import * as React from 'react';
 import { useReplicant } from '~/common/use-replicant';
 import { FlyLiveFlightData } from './types';
-import { telemetryReplicantOpts, TELEMETRY_REPLICANT_NAMESPACE } from './utils/telemetry-replicant';
+import { telemetryReplicantOpts } from './utils/telemetry-replicant';
 
 export function FlightsimTelemetryDashboard() {
   const [showDebugData, setShowDebugData] = React.useState(false);
-  const [isEnabled, setIsEnabled] = useReplicant('is-enabled', TELEMETRY_REPLICANT_NAMESPACE, {
+  const [isEnabled, setIsEnabled] = useReplicant('flylive-is-enabled', {
     defaultValue: false,
   });
   const [flightData] = useReplicant<FlyLiveFlightData>(
-    'flight-telemetry',
-    TELEMETRY_REPLICANT_NAMESPACE,
+    'flylive-flight-telemetry',
     telemetryReplicantOpts
   );
 

@@ -1,16 +1,12 @@
 import type NodeCG from '@alvancamp/test-nodecg-types';
 import { FlyLiveFlightData } from '~/modules/flightsim-telemetry/types';
 import { getFlyliveData } from '~/modules/flightsim-telemetry/utils/get-flylive-data';
-import {
-  telemetryReplicantOpts,
-  TELEMETRY_REPLICANT_NAMESPACE,
-} from '~/modules/flightsim-telemetry/utils/telemetry-replicant';
+import { telemetryReplicantOpts } from '~/modules/flightsim-telemetry/utils/telemetry-replicant';
 
 export async function flightsimTelemetryExtension(nodecg: NodeCG.ServerAPI) {
-  const isEnabledReplicant = nodecg.Replicant<boolean>('is-enabled', TELEMETRY_REPLICANT_NAMESPACE);
+  const isEnabledReplicant = nodecg.Replicant<boolean>('flylive-is-enabled');
   const telemetryReplicant = nodecg.Replicant<FlyLiveFlightData>(
-    'flight-telemetry',
-    TELEMETRY_REPLICANT_NAMESPACE,
+    'flylive-flight-telemetry',
     telemetryReplicantOpts
   );
   let interval: NodeJS.Timer | null = null;
