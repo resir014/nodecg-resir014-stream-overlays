@@ -1,8 +1,8 @@
-import { useOnMount } from '@internal/common/use-on-mount';
-import { OverlayRoot } from '@internal/components/overlay/overlay-root';
-import { StudioClockInterface } from '@internal/modules/studio-clock/studio-clock-interface';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { useOnMount } from '~/common/use-on-mount';
+import { OverlayRoot } from '~/components/overlay/overlay-root';
+import { StudioClockInterface } from '~/modules/studio-clock/studio-clock-interface';
 
 import './studio-clock-obs.graphics.css';
 

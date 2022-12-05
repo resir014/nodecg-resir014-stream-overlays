@@ -1,4 +1,3 @@
-import { useReplicant } from '@internal/common/use-replicant';
 import {
   Box,
   Chip,
@@ -16,6 +15,7 @@ import {
 import * as React from 'react';
 import { FlyLiveFlightData } from './types';
 import { telemetryReplicantOpts, TELEMETRY_REPLICANT_NAMESPACE } from './utils/telemetry-replicant';
+import { useReplicant } from '~/common/use-replicant';
 
 export function FlightsimTelemetryDashboard() {
   const [showDebugData, setShowDebugData] = React.useState(false);

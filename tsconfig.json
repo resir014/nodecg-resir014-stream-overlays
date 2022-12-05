@@ -6,7 +6,7 @@
     "strict": true,
     "baseUrl": "./src",
     "paths": {
-      "@internal/*": ["./*"]
+      "~/*": ["./*"]
     },
     "esModuleInterop": true,
     "skipLibCheck": true,

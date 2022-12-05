@@ -1,16 +1,16 @@
-import { useReplicant } from '@internal/common/use-replicant';
-import { InfoItemCard } from '@internal/components/info-item-card';
-import { OverlayRoot } from '@internal/components/overlay/overlay-root';
-import { FlightItinerary } from '@internal/modules/flightsim-telemetry/components/flight-itinerary';
-import { FlightProgress } from '@internal/modules/flightsim-telemetry/components/flight-progress';
-import { InfoCardWrapper } from '@internal/modules/flightsim-telemetry/components/info-card-wrapper';
-import { FlyLiveFlightData } from '@internal/modules/flightsim-telemetry/types';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { useReplicant } from '~/common/use-replicant';
+import { InfoItemCard } from '~/components/info-item-card';
+import { OverlayRoot } from '~/components/overlay/overlay-root';
+import { FlightItinerary } from '~/modules/flightsim-telemetry/components/flight-itinerary';
+import { FlightProgress } from '~/modules/flightsim-telemetry/components/flight-progress';
+import { InfoCardWrapper } from '~/modules/flightsim-telemetry/components/info-card-wrapper';
+import { FlyLiveFlightData } from '~/modules/flightsim-telemetry/types';
 import {
   telemetryReplicantOpts,
   TELEMETRY_REPLICANT_NAMESPACE,
-} from '@internal/modules/flightsim-telemetry/utils/telemetry-replicant';
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+} from '~/modules/flightsim-telemetry/utils/telemetry-replicant';
 
 import './flightsim.graphics.css';
 
