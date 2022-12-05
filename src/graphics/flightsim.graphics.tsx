@@ -7,20 +7,16 @@ import { FlightItinerary } from '~/modules/flightsim-telemetry/components/flight
 import { FlightProgress } from '~/modules/flightsim-telemetry/components/flight-progress';
 import { InfoCardWrapper } from '~/modules/flightsim-telemetry/components/info-card-wrapper';
 import { FlyLiveFlightData } from '~/modules/flightsim-telemetry/types';
-import {
-  telemetryReplicantOpts,
-  TELEMETRY_REPLICANT_NAMESPACE,
-} from '~/modules/flightsim-telemetry/utils/telemetry-replicant';
+import { telemetryReplicantOpts } from '~/modules/flightsim-telemetry/utils/telemetry-replicant';
 
 import './flightsim.graphics.css';
 
 function GraphicsRoot() {
-  const [isEnabled] = useReplicant('is-enabled', TELEMETRY_REPLICANT_NAMESPACE, {
+  const [isEnabled] = useReplicant('flylive-is-enabled', {
     defaultValue: false,
   });
   const [flightData] = useReplicant<FlyLiveFlightData>(
-    'flight-telemetry',
-    TELEMETRY_REPLICANT_NAMESPACE,
+    'flylive-flight-telemetry',
     telemetryReplicantOpts
   );
 
