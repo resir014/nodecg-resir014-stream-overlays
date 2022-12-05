@@ -16,8 +16,7 @@ const baseConfig = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
-      '@internal': path.join(__dirname, 'src'),
-      nodecg: path.join(__dirname, '../../..'),
+      '~': path.join(__dirname, 'src'),
     },
   },
   module: {
