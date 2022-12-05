@@ -1,27 +1,30 @@
 import * as React from 'react';
 import type NodeCG from '@alvancamp/test-nodecg-types';
 
+export type UseReplicantHookReturnValue<T> = [T | undefined, (val: T | ((curr: T) => T)) => void];
+
 /**
- * React hook for to get the value of a {@link http://www.nodecg.dev/docs/classes/replicant/ Replicants}.
+ * React hook for to get the value of a {@link https://www.nodecg.dev/docs/classes/replicant/ Replicants}.
  *
  * @copyright Copyright (c) 2021 York Student Television
  *
  * @param name The name of the replicant.
- * @param namespace The namespace to in which to look for this replicant. Defaults to the name of the current bundle.
+ * @param namespaceOrOpts The namespace to in which to look for this replicant. Defaults to the
+ * name of the current bundle. This can also be replaced with the replicant options.
  * @param opts The options for this replicant.
  * @returns
  */
 export function useReplicantValue<T>(
   name: string,
-  namespace?: string,
+  namespaceOrOpts?: string | NodeCG.Replicant.Options<T>,
   opts?: NodeCG.Replicant.Options<T>
 ) {
   const replicant = React.useMemo(
     () =>
-      typeof namespace === 'string'
-        ? nodecg.Replicant<T>(name, namespace, opts)
+      typeof namespaceOrOpts === 'string'
+        ? nodecg.Replicant<T>(name, namespaceOrOpts, opts)
         : nodecg.Replicant<T>(name, opts),
-    [name, namespace, opts]
+    [name, namespaceOrOpts, opts]
   );
   const [value, setValue] = React.useState<T | undefined>(
     opts && 'defaultValue' in opts ? opts.defaultValue : undefined
@@ -43,26 +46,27 @@ export function useReplicantValue<T>(
 }
 
 /**
- * React hook for interacting with {@link http://www.nodecg.dev/docs/classes/replicant/ NodeCG's Replicants}.
+ * React hook for interacting with {@link https://www.nodecg.dev/docs/classes/replicant/ NodeCG's Replicants}.
  *
  * @copyright Copyright (c) 2021 York Student Television
  *
  * @param name The name of the replicant.
- * @param namespace The namespace to in which to look for this replicant. Defaults to the name of the current bundle.
+ * @param namespaceOrOpts The namespace to in which to look for this replicant. Defaults to the
+ * name of the current bundle. This can also be replaced with the replicant options.
  * @param opts The options for this replicant.
  * @returns
  */
 export function useReplicant<T>(
   name: string,
-  namespace?: string,
+  namespaceOrOpts?: string | NodeCG.Replicant.Options<T>,
   opts?: NodeCG.Replicant.Options<T>
 ) {
   const replicant = React.useMemo(
     () =>
-      typeof namespace === 'string'
-        ? nodecg.Replicant<T>(name, namespace, opts)
+      typeof namespaceOrOpts === 'string'
+        ? nodecg.Replicant<T>(name, namespaceOrOpts, opts)
         : nodecg.Replicant<T>(name, opts),
-    [name, namespace, opts]
+    [name, namespaceOrOpts, opts]
   );
   const [value, setValue] = React.useState<T | undefined>(
     opts && 'defaultValue' in opts ? opts.defaultValue : undefined
