@@ -4,8 +4,8 @@ import { createStyleObject } from '@capsizecss/core';
 import fontMetrics from '@capsizecss/metrics/inter';
 import { format } from 'date-fns';
 import * as React from 'react';
-import { useClock } from '../clock/clock-utils';
 import { useOnMount } from '~/common/use-on-mount';
+import { useClock } from '../clock/clock-utils';
 
 const style = createStyleObject({
   capHeight: 18,

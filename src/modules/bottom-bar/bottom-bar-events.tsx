@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { BottomBarEventBox } from './bottom-bar-event-box';
 import { IconChart, IconDollarSign, IconStar } from '~/components/icons';
+import { BottomBarEventBox } from './bottom-bar-event-box';
 
 export function BottomBarEvents() {
   return (

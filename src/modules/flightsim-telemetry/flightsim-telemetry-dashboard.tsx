@@ -13,9 +13,9 @@ import {
   TableRow,
 } from '@mui/material';
 import * as React from 'react';
+import { useReplicant } from '~/common/use-replicant';
 import { FlyLiveFlightData } from './types';
 import { telemetryReplicantOpts, TELEMETRY_REPLICANT_NAMESPACE } from './utils/telemetry-replicant';
-import { useReplicant } from '~/common/use-replicant';
 
 export function FlightsimTelemetryDashboard() {
   const [showDebugData, setShowDebugData] = React.useState(false);
