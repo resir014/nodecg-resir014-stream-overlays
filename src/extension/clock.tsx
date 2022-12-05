@@ -1,6 +1,6 @@
-import { createDateMap } from '@internal/modules/clock/clock-utils';
-import type { DateMap } from '@internal/modules/clock/types';
 import type NodeCG from '@alvancamp/test-nodecg-types';
+import { createDateMap } from '~/modules/clock/clock-utils';
+import type { DateMap } from '~/modules/clock/types';
 
 export async function clockExtension(nodecg: NodeCG.ServerAPI) {
   const clockReplicant = nodecg.Replicant<DateMap>('clock-state');

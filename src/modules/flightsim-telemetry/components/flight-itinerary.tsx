@@ -1,5 +1,5 @@
-import { InfoItemCard } from '@internal/components/info-item-card';
 import * as React from 'react';
+import { InfoItemCard } from '~/components/info-item-card';
 
 export interface FlightItineraryProps {
   origin: string;

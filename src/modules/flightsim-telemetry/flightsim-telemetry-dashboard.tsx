@@ -1,4 +1,3 @@
-import { useReplicant } from '@internal/common/use-replicant';
 import {
   Box,
   Chip,
@@ -14,6 +13,7 @@ import {
   TableRow,
 } from '@mui/material';
 import * as React from 'react';
+import { useReplicant } from '~/common/use-replicant';
 import { FlyLiveFlightData } from './types';
 import { telemetryReplicantOpts, TELEMETRY_REPLICANT_NAMESPACE } from './utils/telemetry-replicant';
 
