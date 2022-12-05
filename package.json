@@ -44,6 +44,7 @@
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
+    "@alvancamp/test-nodecg-types": "^1.9.25",
     "@babel/core": "^7.19.6",
     "@babel/preset-env": "^7.19.4",
     "@babel/preset-react": "^7.18.6",

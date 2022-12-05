@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@alvancamp/test-nodecg-types@^1.9.25":
+  version "1.9.25"
+  resolved "https://registry.yarnpkg.com/@alvancamp/test-nodecg-types/-/test-nodecg-types-1.9.25.tgz#d17abd4d9e5345003474fc077ca40660bea1c6bc"
+  integrity sha512-CLt8xSh9WlBmu66Gkx+xoGR2jXHEz8ofjBUIxULhgIA+qvWAUuGSYMmND4Ta8zpB8ypeGG2ANI7kwlVCOiQfvg==
+
 "@ampproject/remapping@^2.1.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@ampproject/remapping/-/remapping-2.2.0.tgz#56c133824780de3174aed5ab6834f3026790154d"

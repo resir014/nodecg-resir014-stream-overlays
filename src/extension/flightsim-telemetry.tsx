@@ -4,9 +4,9 @@ import {
   telemetryReplicantOpts,
   TELEMETRY_REPLICANT_NAMESPACE,
 } from '@internal/modules/flightsim-telemetry/utils/telemetry-replicant';
-import type { NodeCG } from 'nodecg/types/server';
+import type NodeCG from '@alvancamp/test-nodecg-types';
 
-export async function flightsimTelemetryExtension(nodecg: NodeCG) {
+export async function flightsimTelemetryExtension(nodecg: NodeCG.ServerAPI) {
   const isEnabledReplicant = nodecg.Replicant<boolean>('is-enabled', TELEMETRY_REPLICANT_NAMESPACE);
   const telemetryReplicant = nodecg.Replicant<FlyLiveFlightData>(
     'flight-telemetry',
