@@ -1,7 +1,7 @@
-import { useOnMount } from '@internal/common/use-on-mount';
-import { StudioClockInterface } from '@internal/modules/studio-clock/studio-clock-interface';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { useOnMount } from '~/common/use-on-mount';
+import { StudioClockInterface } from '~/modules/studio-clock/studio-clock-interface';
 
 import './studio-clock.dashboard.css';
 

@@ -1,6 +1,6 @@
-import { useReplicantValue } from '@internal/common/use-replicant';
 import { getDate, getHours, getMinutes, getMonth, getSeconds, getYear } from 'date-fns';
 import { DateMap } from './types';
+import { useReplicantValue } from '~/common/use-replicant';
 
 export function createDateMap(date: Date): DateMap {
   return {

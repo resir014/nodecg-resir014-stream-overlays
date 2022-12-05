@@ -1,6 +1,6 @@
-import { resolveHexColor } from '@internal/common/colors';
 import clsx from 'clsx';
 import * as React from 'react';
+import { resolveHexColor } from '~/common/colors';
 
 export interface ClockWatchTickProps extends React.ComponentPropsWithoutRef<'div'> {
   currentSecond: number;

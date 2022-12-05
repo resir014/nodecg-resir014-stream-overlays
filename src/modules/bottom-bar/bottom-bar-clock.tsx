@@ -2,10 +2,10 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import { createStyleObject } from '@capsizecss/core';
 import fontMetrics from '@capsizecss/metrics/inter';
-import { useOnMount } from '@internal/common/use-on-mount';
 import { format } from 'date-fns';
 import * as React from 'react';
 import { useClock } from '../clock/clock-utils';
+import { useOnMount } from '~/common/use-on-mount';
 
 const style = createStyleObject({
   capHeight: 18,
