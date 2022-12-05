@@ -6,12 +6,11 @@
     "strict": true,
     "baseUrl": "./src",
     "paths": {
-      "@internal/*": ["./*"],
-      "nodecg/*": ["../../../*"]
+      "@internal/*": ["./*"]
     },
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*", "../../types/browser.d.ts"]
+  "include": ["src/**/*", "node_modules/@alvancamp/test-nodecg-types/augment-window.d.ts"]
 }

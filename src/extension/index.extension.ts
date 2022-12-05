@@ -1,8 +1,8 @@
-import type { NodeCG } from 'nodecg/types/server';
+import type NodeCG from '@alvancamp/test-nodecg-types';
 import { clockExtension } from './clock';
 import { flightsimTelemetryExtension } from './flightsim-telemetry';
 
-export = (nodecg: NodeCG) => {
+export = (nodecg: NodeCG.ServerAPI) => {
   clockExtension(nodecg).catch(err => {
     nodecg.log.error('Failed to start Clock extension', err);
   });

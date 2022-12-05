@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { ReplicantOptions } from 'nodecg/types/browser';
+import type NodeCG from '@alvancamp/test-nodecg-types';
 
 /**
  * React hook for to get the value of a {@link http://www.nodecg.dev/docs/classes/replicant/ Replicants}.
@@ -11,23 +11,31 @@ import type { ReplicantOptions } from 'nodecg/types/browser';
  * @param opts The options for this replicant.
  * @returns
  */
-export function useReplicantValue<T>(name: string, namespace?: string, opts?: ReplicantOptions<T>) {
+export function useReplicantValue<T>(
+  name: string,
+  namespace?: string,
+  opts?: NodeCG.Replicant.Options<T>
+) {
   const replicant = React.useMemo(
     () =>
       typeof namespace === 'string'
-        ? nodecg.Replicant(name, namespace, opts)
-        : nodecg.Replicant(name, opts),
+        ? nodecg.Replicant<T>(name, namespace, opts)
+        : nodecg.Replicant<T>(name, opts),
     [name, namespace, opts]
   );
-  const [value, setValue] = React.useState(opts?.defaultValue);
+  const [value, setValue] = React.useState<T | undefined>(
+    opts && 'defaultValue' in opts ? opts.defaultValue : undefined
+  );
 
   React.useEffect(() => {
-    const listener = (newVal: T) => {
+    const listener = (newVal: T | undefined) => {
       setValue(newVal);
     };
+
     replicant.on('change', listener);
+
     return () => {
-      replicant.removeListener('change', listener);
+      replicant.off('change', listener);
     };
   }, [replicant]);
 
@@ -44,30 +52,36 @@ export function useReplicantValue<T>(name: string, namespace?: string, opts?: Re
  * @param opts The options for this replicant.
  * @returns
  */
-export function useReplicant<T>(name: string, namespace?: string, opts?: ReplicantOptions<T>) {
+export function useReplicant<T>(
+  name: string,
+  namespace?: string,
+  opts?: NodeCG.Replicant.Options<T>
+) {
   const replicant = React.useMemo(
     () =>
       typeof namespace === 'string'
-        ? nodecg.Replicant(name, namespace, opts)
-        : nodecg.Replicant(name, opts),
+        ? nodecg.Replicant<T>(name, namespace, opts)
+        : nodecg.Replicant<T>(name, opts),
     [name, namespace, opts]
   );
-  const [value, setValue] = React.useState(opts?.defaultValue);
+  const [value, setValue] = React.useState<T | undefined>(
+    opts && 'defaultValue' in opts ? opts.defaultValue : undefined
+  );
 
   React.useEffect(() => {
-    const listener = (newValue: T) => {
+    const listener = (newValue: T | undefined) => {
       setValue(newValue);
     };
 
     replicant.on('change', listener);
 
     return () => {
-      replicant.removeListener('change', listener);
+      replicant.off('change', listener);
     };
   }, [replicant]);
 
   const setter = React.useCallback(
-    (newValue: T) => {
+    (newValue: T | undefined) => {
       replicant.value = newValue;
     },
     [replicant]
