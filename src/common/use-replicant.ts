@@ -23,7 +23,7 @@ export function useReplicantValue<T>(
     () =>
       typeof namespaceOrOpts === 'string'
         ? nodecg.Replicant<T>(name, namespaceOrOpts, opts)
-        : nodecg.Replicant<T>(name, opts),
+        : nodecg.Replicant<T>(name, namespaceOrOpts ?? opts),
     [name, namespaceOrOpts, opts]
   );
   const [value, setValue] = React.useState<T | undefined>(
@@ -65,7 +65,7 @@ export function useReplicant<T>(
     () =>
       typeof namespaceOrOpts === 'string'
         ? nodecg.Replicant<T>(name, namespaceOrOpts, opts)
-        : nodecg.Replicant<T>(name, opts),
+        : nodecg.Replicant<T>(name, namespaceOrOpts ?? opts),
     [name, namespaceOrOpts, opts]
   );
   const [value, setValue] = React.useState<T | undefined>(
