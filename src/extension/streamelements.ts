@@ -1,28 +1,7 @@
 import type NodeCG from '@alvancamp/test-nodecg-types';
 import { StreamElementsServiceClient } from 'nodecg-io-streamelements';
 import { requireService } from 'nodecg-io-core';
-
-// export interface StreamElementsReplicant {
-//   lastSubscriber?: StreamElementsSubscriberEvent;
-//   lastSubBomb?: StreamElementsSubBombEvent<StreamElementsSubscriberEvent>;
-//   lastTip?: StreamElementsTipEvent;
-//   lastCheer?: StreamElementsCheerEvent;
-//   lastGift?: StreamElementsSubscriberEvent;
-//   lastFollow?: StreamElementsFollowEvent;
-//   lastRaid?: StreamElementsRaidEvent;
-//   lastHost?: StreamElementsHostEvent;
-// }
-
-function formatSubTier(tier: '1000' | '2000' | '3000' | 'prime'): string {
-  if (tier === 'prime') {
-    return 'Twitch Prime';
-  }
-
-  // We want to display the tier as 1, 2, 3
-  // However StreamElements stores the sub tiers as 1000, 2000 and 3000.
-  // So we divide the tier by 1000 to get the tier in our expected format.
-  return `Tier ${(Number.parseInt(tier, 10) / 1000).toString()}`;
-}
+import { formatSubTier } from '~/modules/streamelements/se-utils';
 
 export async function streamElementsExtension(nodecg: NodeCG.ServerAPI) {
   nodecg.log.info('Sample bundle for StreamElements started');

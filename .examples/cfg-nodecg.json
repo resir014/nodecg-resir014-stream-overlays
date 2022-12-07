@@ -1,0 +1,7 @@
+{
+  "developer": false,
+  "bundles": {
+    "enabled": ["nodecg-io-core", "nodecg-io-streamelements", "nodecg-resir014-stream-overlays"],
+    "paths": ["D:\\Sandbox\\nodecg-playground\\nodecg-io"]
+  }
+}
