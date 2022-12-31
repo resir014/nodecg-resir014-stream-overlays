@@ -36,9 +36,11 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.14",
+    "@mui/x-date-pickers": "^5.0.10",
     "clsx": "^1.2.1",
     "cross-fetch": "^3.1.5",
     "date-fns": "^2.29.3",
+    "dequal": "^2.0.3",
     "nodecg-io-core": "^0.2.0",
     "nodecg-io-streamelements": "^0.2.0",
     "react": "^17.0.2",
@@ -96,12 +98,11 @@
     },
     "dashboardPanels": [
       {
-        "name": "studio-clock",
-        "title": "Studio Clock",
-        "file": "studio-clock.html",
+        "name": "Dashboard",
+        "title": "Overlay Dashboard",
+        "file": "overlay-main.html",
         "headerColor": "#0070f3",
-        "width": 2,
-        "workspace": "Dashboard"
+        "fullbleed": true
       },
       {
         "name": "flightsim-telemetry",
@@ -127,6 +128,13 @@
         "file": "bottom-bar.html",
         "width": 1920,
         "height": 96
+      }
+    ],
+    "soundCues": [
+      {
+        "name": "time-signal",
+        "assignable": false,
+        "defaultFile": "assets/sounds/timesignal.ogg"
       }
     ]
   }

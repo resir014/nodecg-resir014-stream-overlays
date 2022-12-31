@@ -11,6 +11,7 @@ export interface StudioClockInterfaceProps extends React.ComponentPropsWithoutRe
   watchFaceFont?: string;
   watchFaceColor?: string;
   hideTimezone?: boolean;
+  transparent?: boolean;
 }
 
 export function StudioClockInterface({
@@ -20,6 +21,7 @@ export function StudioClockInterface({
   watchFaceFont = 'JetBrains Mono',
   watchFaceColor,
   hideTimezone,
+  transparent,
   ...rest
 }: StudioClockInterfaceProps) {
   const time = useClock();
@@ -63,7 +65,8 @@ export function StudioClockInterface({
   return (
     <div
       className={clsx(
-        'inline-flex flex-col items-center space-y-8 rounded-xl bg-chungking-black px-4 py-8',
+        'inline-flex flex-col items-center space-y-8 rounded-xl',
+        transparent ? null : 'bg-chungking-black px-4 py-8',
         className
       )}
       style={style}
@@ -88,32 +91,38 @@ export function StudioClockInterface({
           <div className="flex flex-col items-center justify-center w-full h-full rounded-full overflow-hidden">
             <div className="flex items-end flex-auto mb-4 text-center text-chungking-white">
               <div className="space-y-2" style={watchUIStyle}>
-                <p className="text-2xl leading-none font-bold">{format(time, 'EEEE')}</p>
-                <p className="text-2xl leading-none">{format(time, 'dd MMMM yyyy')}</p>
+                <span className="block m-0 text-2xl leading-none font-bold">
+                  {format(time, 'EEEE')}
+                </span>
+                <span className="block m-0 text-2xl leading-none">
+                  {format(time, 'dd MMMM yyyy')}
+                </span>
               </div>
             </div>
             <div>
-              <p
-                className="text-8xl leading-none font-bold tabular-nums text-chungking-white"
+              <span
+                className="m-0 text-8xl leading-none font-bold tabular-nums text-chungking-white"
                 style={watchFaceStyle}
               >
                 {format(time, 'HH:mm')}
-              </p>
+              </span>
             </div>
             <div className="flex-auto mt-2">
-              <p
-                className="text-6xl leading-none font-bold tabular-nums text-chungking-white"
+              <span
+                className="block m-0 text-6xl leading-none font-bold tabular-nums text-chungking-white"
                 style={watchFaceStyle}
               >
                 {format(time, 'ss')}
-              </p>
+              </span>
             </div>
           </div>
         </div>
       </div>
       {hideTimezone ? null : (
         <div className="text-center space-y-2 text-chungking-white" style={watchUIStyle}>
-          <p className="text-2xl leading-none font-bold">{timeZoneOptions.timeZone}</p>
+          <span className="block m-0 text-2xl leading-none font-bold">
+            {timeZoneOptions.timeZone}
+          </span>
         </div>
       )}
     </div>

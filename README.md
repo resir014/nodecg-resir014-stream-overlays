@@ -7,7 +7,9 @@
 - [x] Flightsim Telemetry
 - [x] Clock extension (time stored in replicant)
 - [ ] Setup [nodecg-io](https://nodecg.io/0.2/) + StreamElements extension
+- [ ] StreamElements alerts
 - [ ] Universal Overlay (merged BottomBar™ + background screen)
+- [ ] Intermission overlays + timesignal settings
 
 ## Getting started
 
