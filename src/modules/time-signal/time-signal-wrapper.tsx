@@ -2,7 +2,7 @@ import { subSeconds } from 'date-fns';
 import * as React from 'react';
 import { useReplicantValue } from '~/common/use-replicant';
 import { useClock } from '../clock/clock-utils';
-import { PrestreamSettingsReplicant } from '../overlay-main/types';
+import { PrestreamSettingsReplicant } from '../overlay-control/types';
 
 export interface TimeSignalWrapperProps {
   startH: number;

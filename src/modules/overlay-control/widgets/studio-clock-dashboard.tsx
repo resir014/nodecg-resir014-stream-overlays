@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader } from '@mui/material';
 import * as React from 'react';
 import { useOnMount } from '~/common/use-on-mount';
-import { StudioClockInterface } from '../studio-clock/studio-clock-interface';
+import { StudioClockInterface } from '../../studio-clock/studio-clock-interface';
 
 export function StudioClockDashboard() {
   const [isClockRendered, setIsClockRendered] = React.useState(false);

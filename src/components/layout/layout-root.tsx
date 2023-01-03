@@ -1,7 +1,7 @@
 import { Box, BoxProps } from '@mui/material';
 import * as React from 'react';
 
-export function Root({ children, sx, ...rest }: BoxProps) {
+export function LayoutRoot({ children, sx, ...rest }: BoxProps) {
   return (
     <Box
       sx={{

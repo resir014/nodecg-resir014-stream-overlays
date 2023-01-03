@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, FormControl, FormGroup, TextField } from
 import { DateTimePicker } from '@mui/x-date-pickers';
 import * as React from 'react';
 import { useReplicant } from '~/common/use-replicant';
-import { PrestreamSettingsReplicant } from './types';
+import { PrestreamSettingsReplicant } from '../types';
 
 const defaultDate = new Date();
 // MUI datetime picker doesn't automatically reset seconds to 0, so we do this instead.
