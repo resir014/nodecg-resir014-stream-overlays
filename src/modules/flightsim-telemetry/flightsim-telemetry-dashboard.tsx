@@ -43,12 +43,17 @@ export function FlightsimTelemetryDashboard() {
         <Stack direction="row" spacing={2}>
           <FormControlLabel
             label="Enabled"
-            control={<Switch checked={isEnabled} onChange={e => setIsEnabled(e.target.checked)} />}
+            control={
+              <Switch checked={!!isEnabled} onChange={e => setIsEnabled(e.target.checked)} />
+            }
           />
           <FormControlLabel
             label="Show debug data"
             control={
-              <Switch checked={showDebugData} onChange={e => setShowDebugData(e.target.checked)} />
+              <Switch
+                checked={!!showDebugData}
+                onChange={e => setShowDebugData(e.target.checked)}
+              />
             }
           />
         </Stack>
