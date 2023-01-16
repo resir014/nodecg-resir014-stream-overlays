@@ -1,4 +1,5 @@
 import { StreamElementsEvent } from 'nodecg-io-streamelements/extension/StreamElementsEvent';
+import { allowedEventListeners, allowedTestEventListeners } from './listeners';
 
 export interface StreamElementsReplicant {
   lastSubscriber?: StreamElementsEvent;
@@ -26,4 +27,14 @@ export function formatSubTier(tier: '1000' | '2000' | '3000' | 'prime'): string 
   // However StreamElements stores the sub tiers as 1000, 2000 and 3000.
   // So we divide the tier by 1000 to get the tier in our expected format.
   return `Tier ${(Number.parseInt(tier, 10) / 1000).toString()}`;
+}
+
+/**
+ * Returns true if the event type is processable by the alerts queue.
+ *
+ * @param type The tier string received from Twitch
+ * @returns true if the event type is processable.
+ */
+export function isEventProcessable(type?: string) {
+  return type && (allowedEventListeners.includes(type) || allowedTestEventListeners.includes(type));
 }

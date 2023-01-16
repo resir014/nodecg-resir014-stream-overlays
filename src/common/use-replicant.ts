@@ -38,7 +38,8 @@ export function useReplicantValue<T>(
     replicant.on('change', listener);
 
     return () => {
-      replicant.off('change', listener);
+      // @ts-expect-error - type mismatch between current and new replicant handlers
+      replicant.removeListener('change', listener);
     };
   }, [replicant]);
 
@@ -80,7 +81,8 @@ export function useReplicant<T>(
     replicant.on('change', listener);
 
     return () => {
-      replicant.off('change', listener);
+      // @ts-expect-error - type mismatch between current and new replicant handlers
+      replicant.removeListener('change', listener);
     };
   }, [replicant]);
 
